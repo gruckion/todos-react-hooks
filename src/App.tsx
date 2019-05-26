@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { UserContext } from ".";
 
 const App: React.FC = (): JSX.Element => {
-  return (
-    <div>
-      <UserContext.Consumer>{(value): JSX.Element => <div>Hello {value}</div>}</UserContext.Consumer>
-    </div>
-  );
+  const username = useContext(UserContext);
+
+  return <div>Hello {username}</div>;
 };
 
 export default App;
