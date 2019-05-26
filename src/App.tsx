@@ -4,8 +4,8 @@ interface Props {
   username: string;
 }
 
-const App: React.FC<Props> = (props: Props): JSX.Element => {
-  return <div>Hello {props.username}</div>;
+const App: React.FC<Props> = ({ username }: Props): JSX.Element => {
+  return <div>Hello {username}</div>;
 };
 
 export default App;
