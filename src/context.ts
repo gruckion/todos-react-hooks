@@ -1,19 +1,17 @@
-import React from "react";
-
-export interface Todo {
-  id: number;
-  text: string;
-  complete: boolean;
-}
+import React, { Dispatch } from "react";
+import { Action } from "./reducer";
 
 export interface State {
-  todos: Todo[];
+  counter: number;
 }
 
-export const TodosContext = React.createContext<State>({
-  todos: [
-    { id: 1, text: "Eat breakfast", complete: false },
-    { id: 2, text: "Do laundry", complete: false },
-    { id: 3, text: "Finish project", complete: true },
-  ],
-});
+const initialState: State = {
+  counter: 0,
+};
+
+interface Context {
+  state: State;
+  dispatch: Dispatch<Action>;
+}
+
+export const CounterContext = React.createContext<Context>({ state: initialState, dispatch: (): number => 0 });
