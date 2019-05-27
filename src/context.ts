@@ -1,5 +1,5 @@
 import React, { Dispatch } from "react";
-import { Action } from "./reducer";
+import { CounterAction } from "./counter/actions";
 
 export interface State {
   counter: number;
@@ -11,7 +11,10 @@ const initialState: State = {
 
 interface Context {
   state: State;
-  dispatch: Dispatch<Action>;
+  dispatch: Dispatch<CounterAction>;
 }
 
-export const CounterContext = React.createContext<Context>({ state: initialState, dispatch: (): number => 0 });
+export const CounterContext = React.createContext<Context>({
+  state: initialState,
+  dispatch: (): number => 0,
+});

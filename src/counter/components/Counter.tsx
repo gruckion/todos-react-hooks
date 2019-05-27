@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CounterContext } from "../context";
+import { CounterContext } from "../../context";
 
 export const Counter = (): JSX.Element => {
   const { state, dispatch } = useContext(CounterContext);

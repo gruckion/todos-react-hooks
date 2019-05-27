@@ -1,7 +1,7 @@
 import React, { useContext, useReducer } from "react";
 import { CounterContext } from "./context";
 import { counterReducer } from "./reducer";
-import { Counter } from "./components/Counter";
+import { Counter } from "./counter/components/Counter";
 
 export const App = (): JSX.Element => {
   const context = useContext(CounterContext);
